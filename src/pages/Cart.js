@@ -27,10 +27,12 @@ const Cart = () => {
   return (
     <div className="w-full bg-gray-100 p-4">
       {products.length > 0 ? (
-        <div className="container mx-auto h-auto flex flex-row justify-between ">
-          <div className="w-full h-full bg-white basis-[79%]  px-4 ">
+        <div className="container mx-auto h-auto flex flex-col md:flex-row justify-between ">
+          <div className="w-full h-full bg-white mb-3 md:mr-2 basis-[79%]  px-4 ">
             <div className="font-titleFont flex items-center justify-between border-b-[1px] border-b-gray-400 py-3">
-              <h2 className="text-3xl font-medium">Shopping Cart</h2>
+              <h2 className="text-2xl mdl:text-3xl font-medium">
+                Shopping Cart
+              </h2>
               <h4 className="text-xl font-normal">Subtotal</h4>
             </div>
             {/* ========== Products Start Here ========== */}
@@ -48,12 +50,14 @@ const Cart = () => {
                         alt="ProductsImg"
                       />
                     </div>
-                    <div className="w-4/5 ">
-                      <h2 className="font-semibold text-lg">{item.title}</h2>
-                      <p className="text-sm pr-10">
+                    <div className="w-3/5 mdl:w-4/5 ">
+                      <h2 className="font-semibold text-sm mdl:text-lg">
+                        {item.title}
+                      </h2>
+                      <p className="text-xs mdl:text-sm pr-4">
                         {item.description.substring(0, 200)}
                       </p>
-                      <p className="text-base">
+                      <p className="text-sm mdl:text-base">
                         Price Unit:{" "}
                         <span className="font-semibold">${item.price}</span>
                       </p>
@@ -81,7 +85,7 @@ const Cart = () => {
                       </button>
                     </div>
                     <div>
-                      <p className="font-semibold text-lg font-titleFont">
+                      <p className="font-semibold text-sm mdl:text-lg font-titleFont">
                         ${item.price * item.quantity}
                       </p>
                     </div>
@@ -98,6 +102,7 @@ const Cart = () => {
               </button>
             </div>
           </div>
+          {/* ========= Proceed to Pay ========== */}
           <div className="w-full h-52 flex items-center justify-center flex-col bg-white basis-[20%] p-4 ">
             <div>
               <p className="flex items-start text-sm">
@@ -136,17 +141,17 @@ const Cart = () => {
             />
           </div>
           <div className="w-96 p-4 bg-white flex flex-col items-center rounded-md shadow-lg ml-4">
-            <h1 className="font-titleFont text-xl font-semibold">
+            <h1 className="font-titleFont text-lg mdl:text-xl font-semibold">
               Your Cart feels lonely.
             </h1>
-            <p className="text-sm text-center">
+            <p className="text-xs mdl:text-sm text-center">
               Your shopping cart lives to serve. Give it purpose - fill it with
               books, electronics, videos, etc. and make it happy.
             </p>
             <Link to="/">
-            <button className="mt-6 bg-yellow-400 rounded-md cursor-pointer hover:bg-yellow-500 active:bg-yellow-700 px-8 py-2 font-titleFont font-semibold text-lg">
-              Continue Shopping
-            </button>
+              <button className="mt-6 bg-yellow-400 rounded-md cursor-pointer hover:bg-yellow-500 active:bg-yellow-700 px-3 mdl:px-8 py-2 font-titleFont font-semibold text-sm mdl:text-lg">
+                Continue Shopping
+              </button>
             </Link>
           </div>
         </motion.div>
